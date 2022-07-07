@@ -1,0 +1,22 @@
+	[6] Either by fancy SQL code or examination of the results of less fancy code, ascertain what 2 songs were on the chart the longest in 1972, and show the answer and the results that provided the answer (you can hand mark the answer, need not have SQL print it. NOTE: use the position dates within 1972, not the track year for this one:
+	
+mysql> select distinct track_title as "Title", person as "Artist", track_weekscharted as "Weeks on Chart", year(position_date) as "Year"
+    -> from track, position, people
+    -> where year(position_date) = "1972" and
+    -> position_track_id = track_id and
+    -> track_artist_id = person_id
+    -> order by track_weekscharted DESC
+    -> limit 6;
++------------------------------+--------------+----------------+------+
+| Title                        | Artist       | Weeks on Chart | Year |
++------------------------------+--------------+----------------+------+
+| I Am Woman                   | Helen Reddy  |             22 | 1972 |
+| Slippin' Into Darkness       | War          |             22 | 1972 |
+| Dancing In The Moonlight     | King Harvest |             22 | 1972 |
+| Nice To Be With You          | Gallery      |             22 | 1972 |
+| I Gotcha                     | Joe Tex      |             21 | 1972 |
+| Daddy Don't You Walk So Fast | Wayne Newton |             20 | 1972 |
++------------------------------+--------------+----------------+------+
+6 rows in set (0.06 sec)
+
+mysql> notee

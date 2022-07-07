@@ -1,0 +1,76 @@
+mysql> show tables;
++-----------------+
+| Tables_in_music |
++-----------------+
+| label           |
+| people          |
+| position        |
+| top100          |
+| track           |
+| wrote           |
++-----------------+
+6 rows in set (0.00 sec)
+
+mysql> desc label;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| label_id   | int          | NO   | PRI | NULL    | auto_increment |
+| label_name | varchar(100) | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+2 rows in set (0.01 sec)
+
+mysql> desc people;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| person_id | int          | NO   | PRI | NULL    | auto_increment |
+| person    | varchar(100) | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc position;
++-------------------+------+------+-----+---------+-------+
+| Field             | Type | Null | Key | Default | Extra |
++-------------------+------+------+-----+---------+-------+
+| position_track_id | int  | NO   | PRI | NULL    |       |
+| position_week     | int  | NO   | PRI | NULL    |       |
+| position_date     | date | NO   |     | NULL    |       |
+| position_pos      | int  | NO   |     | NULL    |       |
++-------------------+------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc track;
++--------------------+--------------+------+-----+---------+----------------+
+| Field              | Type         | Null | Key | Default | Extra          |
++--------------------+--------------+------+-----+---------+----------------+
+| track_id           | int          | NO   | PRI | NULL    | auto_increment |
+| track_title        | varchar(100) | NO   |     | NULL    |                |
+| track_prefix       | varchar(10)  | NO   |     | NULL    |                |
+| track_year         | int          | NO   |     | NULL    |                |
+| track_yearlyrank   | varchar(10)  | NO   |     | NULL    |                |
+| track_weekscharted | int          | NO   |     | NULL    |                |
+| track_weekstop40   | int          | NO   |     | NULL    |                |
+| track_weekstop10   | int          | NO   |     | NULL    |                |
+| track_weekspeaked  | int          | NO   |     | NULL    |                |
+| track_highestrank  | int          | NO   |     | NULL    |                |
+| track_time         | varchar(10)  | YES  |     | NULL    |                |
+| track_bpm          | int          | YES  |     | NULL    |                |
+| track_dateentered  | date         | NO   |     | NULL    |                |
+| track_datepeaked   | date         | NO   |     | NULL    |                |
+| track_label_id     | int          | YES  | MUL | NULL    |                |
+| track_artist_id    | int          | YES  | MUL | NULL    |                |
++--------------------+--------------+------+-----+---------+----------------+
+16 rows in set (0.01 sec)
+
+mysql> desc wrote;
++-------------------+------+------+-----+---------+-------+
+| Field             | Type | Null | Key | Default | Extra |
++-------------------+------+------+-----+---------+-------+
+| wrote_track_id    | int  | NO   | PRI | NULL    |       |
+| wrote_seq         | int  | NO   | PRI | NULL    |       |
+| wrote_composer_id | int  | NO   | MUL | NULL    |       |
++-------------------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> notee

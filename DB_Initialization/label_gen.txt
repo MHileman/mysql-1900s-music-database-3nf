@@ -1,0 +1,23 @@
+mysql> create table label
+    -> (
+    -> label_id int primary key auto_increment,
+    -> label_name varchar(100) not null
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into label (label_name)
+    -> select distince label from top100
+    -> order by label
+    -> ;
+ERROR 1054 (42S22): Unknown column 'distince' in 'field list'
+mysql> insert into label (label_name)
+    -> select distinc label from top100
+    -> order by label;
+ERROR 1054 (42S22): Unknown column 'distinc' in 'field list'
+mysql> insert into label (label_name)
+    -> select distinct label from top100
+    -> order by label;
+Query OK, 722 rows affected (0.02 sec)
+Records: 722  Duplicates: 0  Warnings: 0
+
+mysql> notee

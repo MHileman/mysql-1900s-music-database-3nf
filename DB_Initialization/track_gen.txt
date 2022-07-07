@@ -1,0 +1,50 @@
+mysql> create table track 
+    -> ( 
+    -> track_id int primary key auto_increment, 
+    -> track_title varchar(100) not null, 
+    -> track_prefix varchar(10) not null, 
+    -> track_year int not null, 
+    -> track_yearlyrank varchar(10) not null, 
+    -> track_weekscharted int not null, 
+    -> track_weekstop40 int not null, 
+    -> track_weekstop10 int not null, 
+    -> track_weekspeaked int not null, 
+    -> track_highestrank int not null, 
+    -> track_time varchar(10), 
+    -> track_bpm int, 
+    -> track_dateentered date not null, 
+    -> track_datepeaked date not null, 
+    -> track_label_id int, 
+    -> track_artist_id int, 
+    -> constraint track_label_fk foreign key (track_label_id) references label(label_id), 
+    -> constraint track_artist_fk foreign key  (track_artist_id) references people(person_id) 
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into track (
+    -> track_title, 
+    -> track_prefix, 
+    -> track_year, 
+    -> track_yearlyrank, 
+    -> track_weekscharted, 
+    -> track_weekstop40, 
+    -> track_weekstop10, 
+    -> track_weekspeaked, 
+    -> track_highestrank, 
+    -> track_time, 
+    -> track_bpm, 
+    -> track_dateentered, 
+    -> track_datepeaked, 
+    -> track_label_id, 
+    -> track_artist_id
+    -> ) 
+    -> 
+    -> select tracktitle, prefix, year, yearlyrank, weeksCH, weeks40, weeks10, weekspeak, highest, time, bpm, dateentered, datepeaked, label_id, person_id 
+    -> from top100, people, label 
+    -> where (top100.artist = people.person) 
+    -> and (top100.label = label.label_name) 
+    -> order by prefix;
+Query OK, 7770 rows affected (0.26 sec)
+Records: 7770  Duplicates: 0  Warnings: 0
+
+mysql> notee

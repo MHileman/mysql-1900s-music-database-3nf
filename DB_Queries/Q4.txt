@@ -1,0 +1,32 @@
+
+[4] What artists hit #1 in 1969, based only on the track year column, rather than the individual position dates? Show artist, title, date peaked, highest position (should be ‘1'), order by DATE PEAKED. 16 rows:
+	
+mysql> select distinct person as "Artist", track_title as "Title", track_datepeaked as "Date Peaked", track_highestrank as "Highest Position"
+    -> from track, people
+    -> where track_year = 1969 and
+    -> track_highestrank = 1 and
+    -> track_artist_id = person_id
+    -> order by track_datepeaked;
++-----------------------------------------+---------------------------------------------------+-------------+------------------+
+| Artist                                  | Title                                             | Date Peaked | Highest Position |
++-----------------------------------------+---------------------------------------------------+-------------+------------------+
+| Tommy James and the Shondells           | Crimson And Clover                                | 1969-02-01  |                1 |
+| Sly & the Family Stone                  | Everyday People                                   | 1969-02-15  |                1 |
+| Tommy Roe                               | Dizzy                                             | 1969-03-15  |                1 |
+| 5th Dimension, The                      | Aquarius/Let The Sunshine In (The Flesh Failures) | 1969-04-12  |                1 |
+| Beatles, The                            | Get Back                                          | 1969-05-24  |                1 |
+| Henry Mancini, His Orchestra and Chorus | Love Theme From Romeo & Juliet                    | 1969-06-28  |                1 |
+| Zager & Evans                           | In The Year 2525 (Exordium & Terminus)            | 1969-07-12  |                1 |
+| Rolling Stones, The                     | Honky Tonk Women                                  | 1969-08-23  |                1 |
+| Archies, The                            | Sugar, Sugar                                      | 1969-09-20  |                1 |
+| Temptations, The                        | I Can't Get Next To You                           | 1969-10-18  |                1 |
+| Elvis Presley                           | Suspicious Minds                                  | 1969-11-01  |                1 |
+| 5th Dimension, The                      | Wedding Bell Blues                                | 1969-11-08  |                1 |
+| Beatles, The                            | Come Together                                     | 1969-11-29  |                1 |
+| Steam                                   | Na Na Hey Hey Kiss Him Goodbye                    | 1969-12-06  |                1 |
+| Peter, Paul and Mary                    | Leaving on A Jet Plane                            | 1969-12-20  |                1 |
+| Diana Ross and the Supremes             | Someday We'll Be Together                         | 1969-12-27  |                1 |
++-----------------------------------------+---------------------------------------------------+-------------+------------------+
+16 rows in set (0.01 sec)
+
+mysql> notee

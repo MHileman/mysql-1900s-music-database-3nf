@@ -1,0 +1,71 @@
+mysql> create table wrote ( 
+    -> wrote_track_id int not null, 
+    -> wrote_seq int not null, 
+    -> wrote_composer_id int not null, 
+    -> primary key (wrote_track_id, wrote_seq), 
+    -> constraint wrote_track_fk foreign key (wrote_track_id) references track(track_id), 
+    -> constraint wrote_composer_fk foreign key (wrote_composer_id) references people(person_id) 
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into wrote (wrote_track_id, wrote_seq, wrote_composer_id)
+    ->   select track_id, 1, person_id from track, people, top100
+    ->   where (track_year = year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby1 is not null) and (writtenby1 <> '') and
+    ->           (writtenby1 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 2, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby2 is not null) and (writtenby2 <> '') and
+    ->           (writtenby2 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 3, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby3 is not null) and (writtenby3 <> '') and
+    ->           (writtenby3 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 4, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby4 is not null) and (writtenby4 <> '') and
+    ->           (writtenby4 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 5, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby5 is not null) and (writtenby5 <> '') and
+    ->           (writtenby5 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 6, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby6 is not null) and (writtenby6 <> '') and
+    ->           (writtenby6 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 7, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby7 is not null) and (writtenby7 <> '') and
+    ->           (writtenby7 = person) and
+    ->           (track_title = tracktitle)
+    -> UNION
+    ->   select track_id, 8, person_id from track, people, top100
+    ->   where (track_year= year) and (track_yearlyrank = yearlyrank)
+    ->           and
+    ->           (writtenby8 is not null) and (writtenby8 <> '') and
+    ->           (writtenby8 = person) and
+    ->           (track_title = tracktitle)
+    -> order by track_id;
+Query OK, 10558 rows affected (0.48 sec)
+Records: 10558  Duplicates: 0  Warnings: 0
+
+mysql> notee

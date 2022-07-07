@@ -1,0 +1,31 @@
+	[7] Which DISTINCT songs made the chart top 10 in July of 1969? (Note: we are looking for the position(s) <= 10 during that July time period; this is NOT the same as Highest Position<=10... the highest may have happened outside of July!) It should be 14 rows of unique songs. Show title and artist, ordered by artist:
+	
+mysql> select distinct track_title as "Title", person as "Artist"
+    -> from track, people, position 
+    -> where year(position_date) = '1969' and
+    -> month(position_date) = '07' and
+    -> track_artist_id = person_id and
+    -> position_track_id = track_id and
+    -> position_pos <= 10
+    -> order by person;
++----------------------------------------+-----------------------------------------+
+| Title                                  | Artist                                  |
++----------------------------------------+-----------------------------------------+
+| Baby, I Love You                       | Andy Kim                                |
+| Get Back                               | Beatles, The                            |
+| The Ballad Of John And Yoko            | Beatles, The                            |
+| Spinning Wheel                         | Blood, Sweat & Tears                    |
+| Bad Moon Rising                        | Creedence Clearwater Revival            |
+| Love Theme From Romeo & Juliet         | Henry Mancini, His Orchestra and Chorus |
+| What Does It Take (To Win Your Love)   | Jr. Walker & the All Stars              |
+| Too Busy Thinking About My Baby        | Marvin Gaye                             |
+| Good Morning Starshine                 | Oliver                                  |
+| My Cherie Amour                        | Stevie Wonder                           |
+| One                                    | Three Dog Night                         |
+| Crystal Blue Persuasion                | Tommy James and the Shondells           |
+| Color Him Father                       | Winstons, The                           |
+| In The Year 2525 (Exordium & Terminus) | Zager & Evans                           |
++----------------------------------------+-----------------------------------------+
+14 rows in set (0.02 sec)
+
+mysql> notee

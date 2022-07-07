@@ -1,0 +1,480 @@
+mysql> create table position
+    -> (
+    -> position_track_id int not null,
+    -> position_week int not null,
+    -> position_date date not null,
+    -> position_pos int not null,
+    -> PRIMARY KEY (position_track_id, position_week),
+    -> CONSTRAINT position_track_fk FOREIGN KEY (position_track_id) REFERENCES track(track_id)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 1, track_dateentered + interval (1-1)*7 day, week1 from track, top100
+    -> where (week1 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 7744 rows affected (0.15 sec)
+Records: 7744  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 2, track_dateentered + interval (2-1)*7 day, week2 from track, top100
+    -> where (week2 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 7456 rows affected (0.15 sec)
+Records: 7456  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 3, track_dateentered + interval (3-1)*7 day, week3 from track, top100
+    -> where (week3 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 6867 rows affected (0.15 sec)
+Records: 6867  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 4, track_dateentered + interval (4-1)*7 day, week4 from track, top100
+    -> where (week4 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 6378 rows affected (0.13 sec)
+Records: 6378  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 5, track_dateentered + interval (5-1)*7 day, week5 from track, top100
+    -> where (week5 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 5913 rows affected (0.12 sec)
+Records: 5913  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 6, track_dateentered + interval (6-1)*7 day, week6 from track, top100
+    -> where (week6 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 5381 rows affected (0.11 sec)
+Records: 5381  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 7, track_dateentered + interval (7-1)*7 day, week7 from track, top100
+    -> where (week7 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 4714 rows affected (0.11 sec)
+Records: 4714  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 8, track_dateentered + interval (8-1)*7 day, week8 from track, top100
+    -> where (week8 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 3972 rows affected (0.10 sec)
+Records: 3972  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 9, track_dateentered + interval (9-1)*7 day, week9 from track, top100
+    -> where (week9 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 3257 rows affected (0.09 sec)
+Records: 3257  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 10, track_dateentered + interval (10-1)*7 day, week10 from track, top100
+    -> where (week10 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2647 rows affected (0.08 sec)
+Records: 2647  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 11, track_dateentered + interval (11-1)*7 day, week11 from track, top100
+    -> where (week11 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2173 rows affected (0.07 sec)
+Records: 2173  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 12, track_dateentered + interval (12-1)*7 day, week12 from track, top100
+    -> where (week12 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1743 rows affected (0.05 sec)
+Records: 1743  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 13, track_dateentered + interval (13-1)*7 day, week13 from track, top100
+    -> where (week13 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1352 rows affected (0.05 sec)
+Records: 1352  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 14, track_dateentered + interval (14-1)*7 day, week14 from track, top100
+    -> where (week14 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1026 rows affected (0.05 sec)
+Records: 1026  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 15, track_dateentered + interval (15-1)*7 day, week15 from track, top100
+    -> where (week15 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 733 rows affected (0.04 sec)
+Records: 733  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 16, track_dateentered + interval (16-1)*7 day, week16 from track, top100
+    -> where (week16 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 516 rows affected (0.04 sec)
+Records: 516  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 17, track_dateentered + interval (17-1)*7 day, week17 from track, top100
+    -> where (week17 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 359 rows affected (0.03 sec)
+Records: 359  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 18, track_dateentered + interval (18-1)*7 day, week18 from track, top100
+    -> where (week18 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 244 rows affected (0.04 sec)
+Records: 244  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 19, track_dateentered + interval (19-1)*7 day, week19 from track, top100
+    -> where (week19 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 162 rows affected (0.02 sec)
+Records: 162  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 20, track_dateentered + interval (20-1)*7 day, week20 from track, top100
+    -> where (week20 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 108 rows affected (0.02 sec)
+Records: 108  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 21, track_dateentered + interval (21-1)*7 day, week21 from track, top100
+    -> where (week21 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 66 rows affected (0.03 sec)
+Records: 66  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 22, track_dateentered + interval (22-1)*7 day, week22 from track, top100
+    -> where (week22 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 44 rows affected (0.02 sec)
+Records: 44  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 23, track_dateentered + interval (23-1)*7 day, week23 from track, top100
+    -> where (week23 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 28 rows affected (0.03 sec)
+Records: 28  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 24, track_dateentered + interval (24-1)*7 day, week24 from track, top100
+    -> where (week24 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 18 rows affected (0.02 sec)
+Records: 18  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 25, track_dateentered + interval (25-1)*7 day, week25 from track, top100
+    -> where (week25 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 14 rows affected (0.02 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 26, track_dateentered + interval (26-1)*7 day, week26 from track, top100
+    -> where (week26 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 11 rows affected (0.02 sec)
+Records: 11  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 27, track_dateentered + interval (27-1)*7 day, week27 from track, top100
+    -> where (week27 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 9 rows affected (0.02 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 28, track_dateentered + interval (28-1)*7 day, week28 from track, top100
+    -> where (week28 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 9 rows affected (0.03 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 29, track_dateentered + interval (29-1)*7 day, week29 from track, top100
+    -> where (week29 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 6 rows affected (0.02 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 30, track_dateentered + interval (30-1)*7 day, week30 from track, top100
+    -> where (week30 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 6 rows affected (0.03 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 31, track_dateentered + interval (31-1)*7 day, week31 from track, top100
+    -> where (week31 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 4 rows affected (0.03 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 32, track_dateentered + interval (32-1)*7 day, week32 from track, top100
+    -> where (week32 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 33, track_dateentered + interval (33-1)*7 day, week33 from track, top100
+    -> where (week33 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 34, track_dateentered + interval (34-1)*7 day, week34 from track, top100
+    -> where (week34 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 35, track_dateentered + interval (35-1)*7 day, week35 from track, top100
+    -> where (week35 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 36, track_dateentered + interval (36-1)*7 day, week36 from track, top100
+    -> where (week36 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 37, track_dateentered + interval (37-1)*7 day, week37 from track, top100
+    -> where (week37 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 38, track_dateentered + interval (38-1)*7 day, week38 from track, top100
+    -> where (week38 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 39, track_dateentered + interval (39-1)*7 day, week39 from track, top100
+    -> where (week39 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 40, track_dateentered + interval (40-1)*7 day, week40 from track, top100
+    -> where (week40 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.03 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 41, track_dateentered + interval (41-1)*7 day, week41 from track, top100
+    -> where (week41 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 42, track_dateentered + interval (42-1)*7 day, week42 from track, top100
+    -> where (week42 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.03 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 43, track_dateentered + interval (43-1)*7 day, week43 from track, top100
+    -> where (week43 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 44, track_dateentered + interval (44-1)*7 day, week44 from track, top100
+    -> where (week44 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 45, track_dateentered + interval (45-1)*7 day, week45 from track, top100
+    -> where (week45 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 46, track_dateentered + interval (46-1)*7 day, week46 from track, top100
+    -> where (week46 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 47, track_dateentered + interval (47-1)*7 day, week47 from track, top100
+    -> where (week47 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 48, track_dateentered + interval (48-1)*7 day, week48 from track, top100
+    -> where (week48 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 49, track_dateentered + interval (49-1)*7 day, week49 from track, top100
+    -> where (week49 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 50, track_dateentered + interval (50-1)*7 day, week50 from track, top100
+    -> where (week50 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 51, track_dateentered + interval (51-1)*7 day, week51 from track, top100
+    -> where (week51 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 52, track_dateentered + interval (52-1)*7 day, week52 from track, top100
+    -> where (week52 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 53, track_dateentered + interval (53-1)*7 day, week53 from track, top100
+    -> where (week53 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 54, track_dateentered + interval (54-1)*7 day, week54 from track, top100
+    -> where (week54 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 55, track_dateentered + interval (55-1)*7 day, week55 from track, top100
+    -> where (week55 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 56, track_dateentered + interval (56-1)*7 day, week56 from track, top100
+    -> where (week56 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 57, track_dateentered + interval (57-1)*7 day, week57 from track, top100
+    -> where (week57 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 58, track_dateentered + interval (58-1)*7 day, week58 from track, top100
+    -> where (week58 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 59, track_dateentered + interval (59-1)*7 day, week59 from track, top100
+    -> where (week59 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 60, track_dateentered + interval (60-1)*7 day, week60 from track, top100
+    -> where (week60 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 61, track_dateentered + interval (61-1)*7 day, week61 from track, top100
+    -> where (week61 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 62, track_dateentered + interval (62-1)*7 day, week62 from track, top100
+    -> where (week62 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 63, track_dateentered + interval (63-1)*7 day, week63 from track, top100
+    -> where (week63 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 64, track_dateentered + interval (64-1)*7 day, week64 from track, top100
+    -> where (week64 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 65, track_dateentered + interval (65-1)*7 day, week65 from track, top100
+    -> where (week65 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 66, track_dateentered + interval (66-1)*7 day, week66 from track, top100
+    -> where (week66 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 67, track_dateentered + interval (67-1)*7 day, week67 from track, top100
+    -> where (week67 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 68, track_dateentered + interval (68-1)*7 day, week68 from track, top100
+    -> where (week68 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 69, track_dateentered + interval (69-1)*7 day, week69 from track, top100
+    -> where (week69 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 70, track_dateentered + interval (70-1)*7 day, week70 from track, top100
+    -> where (week70 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 1 row affected (0.02 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 71, track_dateentered + interval (71-1)*7 day, week71 from track, top100
+    -> where (week71 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 72, track_dateentered + interval (72-1)*7 day, week72 from track, top100
+    -> where (week72 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 73, track_dateentered + interval (73-1)*7 day, week73 from track, top100
+    -> where (week73 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 74, track_dateentered + interval (74-1)*7 day, week74 from track, top100
+    -> where (week74 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 75, track_dateentered + interval (75-1)*7 day, week75 from track, top100
+    -> where (week75 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into position (position_track_id, position_week, position_date, position_pos)
+    -> select track_id, 76, track_dateentered + interval (76-1)*7 day, week76 from track, top100
+    -> where (week76 > 0) and (track_title = tracktitle) and (track_year = year) and (track_yearlyrank = yearlyrank);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc position
+    -> ;
++-------------------+------+------+-----+---------+-------+
+| Field             | Type | Null | Key | Default | Extra |
++-------------------+------+------+-----+---------+-------+
+| position_track_id | int  | NO   | PRI | NULL    |       |
+| position_week     | int  | NO   | PRI | NULL    |       |
+| position_date     | date | NO   |     | NULL    |       |
+| position_pos      | int  | NO   |     | NULL    |       |
++-------------------+------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> notee
